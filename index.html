@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGU 3: PPP Management System</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-700">LGU 3: PPP System</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#features" class="text-gray-600 hover:text-blue-700 transition duration-300">Features</a>
+                <a href="#viability" class="text-gray-600 hover:text-blue-700 transition duration-300">Viability Tool</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-700 transition duration-300">About</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-700 transition duration-300">Contact</a>
+            </div>
+            <a href="login.php" class="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition duration-300 font-medium">Log In</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gray-100 py-20 sm:py-24 md:py-32 text-center rounded-b-lg">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-blue-700 leading-tight mb-4">
+                Empowering Brgy. Novaliches Proper
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-8">
+                A unified platform for managing Public-Private Partnerships and predicting project viability with our advanced analytical tool.
+            </p>
+            <a href="login.php" class="bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-blue-800 transition duration-300 transform hover:scale-105">
+                Start a New Project
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Predictive Tool Card -->
+                <div class="bg-gray-50 p-6 md:p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center justify-center w-16 h-16 bg-blue-700 text-white rounded-full mb-4 mx-auto">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-semibold text-center mb-2">Predictive Viability Tool</h3>
+                    <p class="text-center text-gray-600">
+                        Our advanced tool evaluates project viability based on economic, social, and environmental factors specific to Brgy. Novaliches Proper.
+                    </p>
+                </div>
+                <!-- Project Management Card -->
+                <div class="bg-gray-50 p-6 md:p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center justify-center w-16 h-16 bg-blue-700 text-white rounded-full mb-4 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M18 17a2 2 0 00-2 2H8a2 2 0 00-2-2m-2 0h14" />
+                          </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-semibold text-center mb-2">Streamlined Management</h3>
+                    <p class="text-center text-gray-600">
+                        Manage all stages of your PPP projects, from proposal to completion, in one intuitive and transparent platform.
+                    </p>
+                </div>
+                <!-- Collaboration Card -->
+                <div class="bg-gray-50 p-6 md:p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center justify-center w-16 h-16 bg-blue-700 text-white rounded-full mb-4 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h-3l-3-3-3 3H7a2 2 0 01-2-2v-2a2 2 0 012-2h10a2 2 0 012 2v2a2 2 0 01-2 2zM12 4a2 2 0 100 4 2 2 0 000-4zM12 12a4 4 0 100 8 4 4 0 000-8z" />
+                          </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-semibold text-center mb-2">Enhanced Collaboration</h3>
+                    <p class="text-center text-gray-600">
+                        Facilitate seamless communication and data sharing between the LGU and private sector partners.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-gray-100 rounded-lg">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">About the System</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                Developed specifically for Brgy. Novaliches Proper, this system aims to modernize how we approach infrastructure and development. By providing a data-driven approach to project evaluation, we ensure that every partnership contributes meaningfully to the community's growth and prosperity.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                The predictive tool utilizes key local data points to generate a comprehensive viability score, helping decision-makers and investors make informed choices that benefit both the public and private sectors.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 LGU 3: Public-Private Partnership Management System. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

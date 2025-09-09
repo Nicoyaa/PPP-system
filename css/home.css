@@ -1,0 +1,199 @@
+/* ===== General Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== Main Container ===== */
+main.home-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===== Header ===== */
+.topbar {
+    text-align: center;
+    padding: 20px;
+    background-color: #007bff; /* Blue theme */
+    color: white;
+    border-radius: 12px;
+}
+
+.topbar h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.topbar p {
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+/* ===== Cards ===== */
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.stat-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.stat-card p {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* ===== Quick Actions Buttons ===== */
+.quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.quick-actions .btn {
+    flex: 1 1 200px;
+    padding: 15px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+}
+
+.quick-actions .btn:hover {
+    background-color: #0056b3;
+}
+
+/* ===== Proposal & Notification Cards ===== */
+.proposal-cards, .notification-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.card .btn.small-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+}
+
+.card .btn.view-btn {
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.card .btn.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.card .button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* ===== Contact Section ===== */
+.contact-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-section h2, .contact-section h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.contact-list li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.contact-list li i {
+    margin-right: 8px;
+    color: #007bff;
+}
+
+.contact-list a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .quick-actions {
+        flex-direction: column;
+    }
+
+    .quick-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar h1 {
+        font-size: 1.5rem;
+    }
+
+    .topbar p {
+        font-size: 0.9rem;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+    }
+}

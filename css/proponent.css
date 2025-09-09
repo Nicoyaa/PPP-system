@@ -1,0 +1,181 @@
+:root {
+  --text:#111;--blue:#0a53c1;--blue-600:#0c60db;--ink-20:#f4f6f8;--white:#fff;
+  --border:#e6e8eb;--shadow:0 6px 24px rgba(0,0,0,.06);
+  --dark-background:#121212;--dark-text:#e0e0e0;--dark-border:#333;
+  --dark-card:#1c1c1c;--darker-hover:#161616;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--white);color:var(--text)}
+.app{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+.sidebar{border-right:1px solid var(--border);background:var(--white);overflow-y:auto;max-height:100vh}
+.main{display:grid;grid-template-rows:64px 1fr;min-width:0}
+.brand{display:flex;align-items:center;gap:.6rem;height:64px;padding:0 1rem;
+  border-bottom:1px solid var(--border);font-weight:800;letter-spacing:.3px;text-transform:uppercase}
+.brand .logo{width:34px;height:34px;border-radius:8px;border:2px solid var(--text);
+  display:grid;place-items:center;font-weight:800}
+nav{padding:1rem}
+.nav-group{margin:.75rem 0}
+.nav-label{font-size:.75rem;opacity:.7;margin:.75rem 1rem}
+.nav-item{display:flex;align-items:center;gap:.75rem;padding:.65rem .9rem;
+  border-radius:12px;text-decoration:none;color:var(--text);border:1px solid transparent;
+  transition:.18s ease}
+.nav-item:hover{background:var(--ink-20);border-color:var(--border);transform:translateY(-1px)}
+.nav-item.active{background:var(--ink-20);border-color:var(--text)}
+.nav-item .icon{width:18px;height:18px;border:2px solid var(--text);border-radius:4px}
+.topbar{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;
+  padding:0 1rem;border-bottom:1px solid var(--border);background:var(--white);
+  backdrop-filter:saturate(1.2) blur(2px)}
+.search{display:flex;align-items:center;gap:.5rem;border:1px solid var(--border);
+  border-radius:12px;padding:.5rem .75rem;min-width:260px;transition:.2s ease}
+.search:focus-within{box-shadow:var(--shadow);border-color:var(--blue)}
+.search input{border:none;outline:0;background:0;color:var(--text);width:100%}
+.actions{display:flex;align-items:center;gap:.5rem}
+.btn{background:0;color:var(--text);border:1px solid var(--text);
+  padding:.5rem .9rem;border-radius:12px;cursor:pointer;font-weight:600;transition:.15s ease}
+.btn:hover{background:var(--ink-20);box-shadow:var(--shadow);transform:translateY(-1px)}
+.menu-btn{display:none}
+.content{padding:1.25rem;overflow:auto}
+.breadcrumbs{font-size:.85rem;opacity:.8}
+.page-title{display:flex;align-items:end;justify-content:space-between;margin:.5rem 0 1rem}
+.page-title h1{margin:0;font-size:1.3rem}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(12,1fr)}
+.card{background:var(--white);border:1px solid var(--border);border-radius:16px;
+  padding:1rem;box-shadow:var(--shadow);transition:.2s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.08)}
+.card h3{margin:.25rem 0 .75rem;font-size:1rem}
+/* Dark Mode */
+body.dark-mode{background:var(--dark-background);color:var(--dark-text)}
+.dark-mode .sidebar{background:var(--dark-card);border-right:1px solid var(--dark-border)}
+.dark-mode .main{background:var(--dark-background)}
+.dark-mode .btn{color:var(--dark-text);border:1px solid var(--dark-border)}
+.dark-mode .card{background:var(--dark-card);border:1px solid var(--dark-border)}
+.dark-mode .table th,.dark-mode .table td{border-color:var(--dark-border)}
+.dark-mode .footer-note,.dark-mode .nav-item,.dark-mode .nav-item .icon,.dark-mode .nav-label{color:var(--dark-text)}
+.dark-mode .nav-item:hover,.dark-mode .nav-item.active{background:var(--darker-hover);border-radius:8px}
+/* Responsive */
+@media(max-width:1024px){
+  .app{grid-template-columns:72px 1fr}
+  .brand span,.nav-label,.nav-item span{display:none}
+  .nav-item{justify-content:center}
+}
+@media(max-width:720px){
+  .app{grid-template-columns:1fr}
+  .sidebar{position:fixed;inset:0 auto 0 0;width:260px;transform:translateX(-100%);
+    transition:.25s ease;z-index:20}
+  .sidebar.open{transform:translateX(0)}
+  .menu-btn{display:inline-flex}
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.08);display:none}
+  .overlay.show{display:block}
+  .nav-group{border-top:1px solid var(--border)}
+  .nav-group.collapsed .nav-item{display:none}
+  .nav-group.collapsed .nav-label::after{content:" ▼"}
+  .nav-group .nav-label::after{content:" ▲";float:right;font-size:.7rem}
+}
+/* ========== HELP & SUPPORT MODAL ========== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--white);
+  color: var(--text);
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+}
+.card canvas {
+  max-width: 350px;
+  max-height: 350px;
+}
+
+/* Notifications dropdown */
+#notifDropdown {
+  padding: 0.5rem 0;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+#notifDropdown .dropdown-header {
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+#notifDropdown .dropdown-item {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  white-space: normal;
+}
+
+/* Notification dropdown toggle fix */
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  z-index: 1050;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.dropdown-menu.show {
+  display: block !important;
+}
+/* Notification Dropdown Animation */
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  z-index: 1050;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  max-height: 400px;
+  width: 300px;
+  overflow-y: auto;
+
+  /* Animation setup */
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.card canvas {
+  max-width: 100%;
+  max-height: 250px;
+  margin-top: 10px;
+}
